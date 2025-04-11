@@ -11,12 +11,15 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: rgba(5, 5, 10, 0.9);
-            background-image: url("https://i.pinimg.com/originals/55/01/60/5501609ee45d514d1f2c4a63502045e2.gif");
-            color: #fff;
+            background-color: rgba(5, 5, 10, 0.9); /* Black background */
+            background-image: url("https://i.pinimg.com/originals/55/01/60/5501609ee45d514d1f2c4a63502045e2.gif"); /* bg */
+            background-size: cover; /* Phóng to bao phủ toàn màn hình */
+            background-position: center; /* Căn giữa hình nền */
+            background-repeat: no-repeat; /* Không lặp lại */
+            height: 100vh; /* Chiều cao toàn màn hình */
+            min-height: 100vh; /* Đảm bảo tối thiểu toàn màn hình */
+            color: #fff; /* White text */
             overflow-x: hidden;
-            background-repeat: no-repeat;
-            background-size: cover;
         }
         .top-bar {
             background-color: rgba(0, 0, 0, .3);
@@ -522,9 +525,7 @@
     <script>
         // Hàm callback khi xác minh Turnstile thành công
         function onTurnstileSuccess(token) {
-            // Hiển thị nội dung chính
             document.getElementById("main-content").style.display = "block";
-            // Ẩn container xác minh
             document.getElementById("turnstile-container").style.display = "none";
         }
 
@@ -729,4 +730,4 @@
     <script>!function(){function e(){var e=t.contentDocument||t.contentWindow.document;if(e){var n=e.createElement("script");n.innerHTML="window.__CF$cv$params={r:'927577db09a5bffe',t:'MTc0MzE0NzUwOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);",e.getElementsByTagName("head")[0].appendChild(n)}}if(document.body){var t=document.createElement("iframe");if(t.height=1,t.width=1,t.style.position="absolute",t.style.top=0,t.style.left=0,t.style.border="none",t.style.visibility="hidden",document.body.appendChild(t),"loading"!==document.readyState)e();else if(window.addEventListener)document.addEventListener("DOMContentLoaded",e);else{var n=document.onreadystatechange||function(){};document.onreadystatechange=function(t){n(t),"loading"!==document.readyState&&(document.onreadystatechange=n,e())}}}}()</script>
     <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'92a62bf30ea3bfd9',t:'MTc0MzY1ODIwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
-  </html>
+    </html>
