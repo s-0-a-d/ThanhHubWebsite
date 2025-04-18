@@ -1,0 +1,5 @@
+{
+  "Dead Rails": "loadstring(game:HttpGet("https://raw.githubusercontent.com/s-0-a-d/ThanhHub/refs/heads/main/Dead_Rails"))()",
+  "Blox Fruit": "loadstring(game:HttpGet("https://thanhhubbloxfruit.thanhhub.workers.dev/"))()",
+  "Blade Ball": "loadstring(game:HttpGet("https://scriptbladeball.thanhhub.workers.dev/"))()"
+}
