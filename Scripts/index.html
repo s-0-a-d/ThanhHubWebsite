@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ghost Scripts Collection - Thanh Hub</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/s-0-a-d/ThanhHubWebsite/refs/heads/main/Picsart_24-11-03_17-30-46-045.png" type="image/x-icon">
+  <style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #0a0a0a;
+  background-image: url("https://i.pinimg.com/originals/55/01/60/5501609ee45d514d1f2c4a63502045e2.gif");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+    .top-bar {
+      background-color: rgba(0, 0, 0, .3);
+      color: #fff;
+      padding: 10px 15px;
+      display: flex;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      overflow-x: auto;
+    }
+    .top-bar > * { margin-right: 10px; }
+    .logo { width: 25px; height: 25px; }
+    .title { font-size: 1.2rem; margin-right: 10px; }
+    .menu-items a {
+      padding: 8px 15px;
+      text-decoration: none;
+      color: #fff;
+      transition: color .5s ease, background-color .3s ease;
+      font-size: 1rem;
+    }
+    .menu-items a:hover {
+      color: #00f;
+      background-color: rgba(255, 255, 255, .1);
+      border-radius: 5px;
+    }
+
+    .ghost-container {
+      padding: 120px 20px 50px;
+    }
+    #searchInput {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #333;
+      border-radius: 5px;
+      background-color: #252526;
+      color: #d4d4d4;
+      margin-bottom: 20px;
+      font-size: 1rem;
+    }
+    .script-box {
+      margin: 2rem auto;
+      width: 90%;
+      max-width: 400px;
+      background-color: rgba(20, 20, 50, .3);
+      border: 1px solid #555;
+      border-radius: 5px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, .5);
+      padding: 1rem;
+      text-align: center;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .script-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px 5px rgba(0, 0, 255, .8);
+    }
+    .script-box img {
+      width: 20%;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .script-box h2 {
+      font-size: 1.3rem;
+      margin: .5rem 0;
+      color: #fff;
+    }
+    .script-box pre {
+      background-color: #1a1a1a;
+      color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      font-family: monospace;
+      font-size: 14px;
+      user-select: all;
+      overflow-x: auto;
+      margin-top: 10px;
+      word-break: break-word;
+      white-space: pre-wrap;
+    }
+    .copy-button {
+      margin-top: 10px;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007acc;
+      color: #ffffff;
+      cursor: pointer;
+    }
+    .copy-button:hover {
+      background-color: #005a99;
+    }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Thanh Hub -->
+  <div class="top-bar">
+    <img class="logo" src="https://raw.githubusercontent.com/s-0-a-d/ThanhHubWebsite/refs/heads/main/Picsart_24-11-03_17-30-46-045.png" alt="Logo">
+    <div class="title">Thanh Hub</div>
+    <div class="menu-items">
+    </div>
+  </div>
+
+  <!-- Ghost Scripts Container -->
+  <div class="ghost-container">
+    <h1>Thanh Hub Scripts</h1>
+    <input type="text" id="searchInput" placeholder="Tìm kiếm Script" onkeyup="searchCode()">
+    <div id="codeContainer"></div>
+  </div>
+
+  <!-- Script Ghost -->
+  <script>
+    const dataUrl = "https://raw.githubusercontent.com/s-0-a-d/ThanhHubWebsite/refs/heads/main/Scripts/TatCaScr";
+
+    async function fetchData() {
+      try {
+        const response = await fetch(dataUrl);
+        if (!response.ok) throw new Error('Failed to fetch data');
+        const data = await response.json();
+        renderCodeBlocks(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    }
+
+    function renderCodeBlocks(data) {
+      const container = document.getElementById('codeContainer');
+      container.innerHTML = '';
+      for (const [title, codeText] of Object.entries(data)) {
+        const block = document.createElement('div');
+        block.className = 'script-box';
+        block.setAttribute('data-title', title);
+        block.innerHTML = `
+          <img src="https://raw.githubusercontent.com/s-0-a-d/ThanhHubWebsite/refs/heads/main/code.png">
+          <h2>${title}</h2>
+          <pre><code>${codeText}</code></pre>
+          <button class="copy-button" onclick="copyCode(this)">Copy</button>
+        `;
+        container.appendChild(block);
+      }
+    }
+
+    function searchCode() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const codeBlocks = document.querySelectorAll('.script-box');
+      codeBlocks.forEach(block => {
+        const title = block.getAttribute('data-title').toLowerCase();
+        block.classList.toggle('hidden', !title.includes(input));
+      });
+    }
+
+    function copyCode(button) {
+      const codeElement = button.previousElementSibling.querySelector('code');
+      const text = codeElement.textContent.trim();
+      navigator.clipboard.writeText(text).then(() => {
+        button.textContent = 'Đã copy!';
+        setTimeout(() => { button.textContent = 'Copy'; }, 1000);
+      }).catch(err => {
+        console.error('Failed to copy:', err);
+      });
+    }
+
+    window.onload = fetchData;
+  </script>
+
+</body>
+</html>
