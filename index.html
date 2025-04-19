@@ -339,7 +339,6 @@ body {
             font-size: 1.5rem;
         }
         #main-content {
-            display: none; /* Ẩn nội dung chính ban đầu */
             width: 100%;
             min-height: 100vh; /* Chiều cao tối thiểu toàn màn hình */
             padding: 20px; /* Thêm padding để nội dung rộng rãi hơn */
@@ -348,11 +347,6 @@ body {
     </style>
 </head>
 <body>
-    <!-- Container cho xác minh Turnstile -->
-    <div id="turnstile-container">
-        <h1>Vui lòng xác minh bạn không phải là bot</h1>
-        <div class="cf-turnstile" data-sitekey="0x4AAAAAABO9WTxo4kNhFGL" data-callback="onTurnstileSuccess"></div>
-    </div>
 
     <!-- Nội dung chính của trang, ẩn ban đầu -->
     <div id="main-content">
