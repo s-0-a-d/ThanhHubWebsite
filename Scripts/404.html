@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>404 - Không Tìm Thấy Trang - Thanh Hub</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/s-0-a-d/ThanhHubWebsite/refs/heads/main/Picsart_24-11-03_17-30-46-045.png" type="image/x-icon">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #0a0a0a;
+      background-image: url("https://i.pinimg.com/originals/55/01/60/5501609ee45d514d1f2c4a63502045e2.gif");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+    }
+    .top-bar {
+      background-color: rgba(0, 0, 0, 0.3);
+      color: #fff;
+      padding: 6px 10px;
+      display: flex;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .logo {
+      width: 20px;
+      height: 20px;
+    }
+    .title {
+      font-size: 1rem;
+      margin-right: 8px;
+    }
+    .menu-items a {
+      padding: 5px 10px;
+      font-size: 0.9rem;
+      color: #fff;
+      text-decoration: none;
+    }
+    .menu-items a:hover {
+      color: #00f;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+    }
+    .main-content {
+      width: 100%;
+      min-height: 100vh;
+      padding: 120px 20px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .error-container {
+      background-color: rgba(20, 20, 50, 0.3);
+      border: 1px solid #555;
+      border-radius: 5px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      padding: 2rem;
+      max-width: 500px;
+      width: 90%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .error-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px 5px rgba(0, 0, 255, 0.8);
+    }
+    .error-container h1 {
+      font-size: 2.5rem;
+      margin: 0.5rem 0;
+      color: #ff4444;
+    }
+    .error-container p {
+      font-size: 1.2rem;
+      margin: 1rem 0;
+      color: #d4d4d4;
+    }
+    .back-button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007acc;
+      color: #ffffff;
+      cursor: pointer;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+    .back-button:hover {
+      background-color: #005a99;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Thanh Hub -->
+  <div class="top-bar">
+    <img class="logo" src="https://raw.githubusercontent.com/s-0-a-d/ThanhHubWebsite/refs/heads/main/Picsart_24-11-03_17-30-46-045.png" alt="Logo">
+    <div class="title">Thanh Hub</div>
+    <div class="menu-items">
+      <a href="https://s-0-a-d.github.io/ThanhHubWebsite" target="_blank">Home</a>
+      <a href="https://s-0-a-d.github.io/ThanhHubWebsite/Scripts" target="_blank">Scripts</a>
+      <a href="https://s-0-a-d.github.io/ThanhHubWebsite/Executor" target="_blank">Executor</a>
+    </div>
+  </div>
+
+  <!-- 404 Error Content -->
+  <div class="main-content">
+    <div class="error-container">
+      <h1>404</h1>
+      <p>Oops! Trang bạn tìm kiếm không tồn tại hoặc đã bị di chuyển.</p>
+      <a href="https://s-0-a-d.github.io/ThanhHubWebsite" class="back-button">Quay lại Trang Chủ</a>
+    </div>
+  </div>
+</body>
+</html>
