@@ -1,14 +1,10 @@
 {
-  "Delta VNG v2.668 (k cài đè)": {
-    "downloadUrl": "https://www.mediafire.com/file/0b241b0eq8tjctp/Delta_X_VNG_V2.668_%2528_Test_%2529.apk/file",
-    "imageUrl": "https://raw.githubusercontent.com/s-0-a-d/ThanhHubWebsite/refs/heads/main/35740-delta.png"
-  },
-  "Krnl VNG v2.667": {
-    "downloadUrl": "https://modsfire.com/ou641gwfAU4Jip0",
-    "imageUrl": "https://raw.githubusercontent.com/s-0-a-d/ThanhHubWebsite/refs/heads/main/Krnl.png"
-  },
-  "Code X VNG v2.666": {
-    "downloadUrl": "https://www.mediafire.com/file/1dyw92gy5mibmp3/Codex_VNG_v2.666.609.apk/file",
-    "imageUrl": "https://raw.githubusercontent.com/s-0-a-d/ThanhHubWebsite/refs/heads/main/CodexExecutor.png"
+  "Executor1": {
+    "imageUrl": "https://raw.githubusercontent.com/s-0-a-d/ThanhHubWebsite/refs/heads/main/Ronix.png",
+    "description": "An toàn cho đợi quét hack này, executor này không mạnh nhưng vẫn có thể chạy được đa số scripts",
+    "buttons": [
+      { "label": "Tải Login", "url": "https://www.mediafire.com/file/didjeihcmdz7c1k/Login_%2528c%25C3%25A0i_tr%25C6%25B0%25E1%25BB%259Bc%2529.apk/file" },
+      { "label": "Tải File cuối", "url": "https://www.mediafire.com/file/woc6aq144f45j8m/Ronix_%2528C%25C3%25A0i_cu%25E1%25BB%2591i%2529.apk/file" }
+    ]
   }
 }
