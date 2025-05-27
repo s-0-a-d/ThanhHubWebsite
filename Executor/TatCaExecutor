@@ -1,4 +1,13 @@
 {
+  "Delta Vng (cài đè) v2.673": {
+    "imageUrl": "https://raw.githubusercontent.com/s-0-a-d/ThanhHubWebsite/refs/heads/main/35740-delta.png",
+    "description": "An toàn có Anti ban, và là một Executor xịn",
+    "buttons": [
+      { "label": "Tải Login", "url": "https://www.mediafire.com/file/3f2vdgleok32re3/Login_cho_Delta_VNG_%2528c%25C3%25A0i_%25C4%2591%25E1%25BA%25A7u_ti%25C3%25AAn%2529.apk/file" },
+      { "label": "Tải File cuối", "url": "https://www.mediafire.com/file/24qp456thj0upkq/Delta_VNG_v2.673_%2528c%25C3%25A0i_cu%25E1%25BB%2591i%252C_l%25C6%25B0u_%25C3%25BD_%25C4%2591%25E1%25BB%25ABng_x%25C3%25B3a_c%25C3%25A1i_login%2529.apk/file" }
+    ]
+  },
+
   "Ronix Vng (cài đè) v2.671": {
     "imageUrl": "https://raw.githubusercontent.com/s-0-a-d/ThanhHubWebsite/refs/heads/main/Ronix.png",
     "description": "An toàn cho đợi quét hack này, executor này không mạnh nhưng vẫn có thể chạy được đa số scripts",
