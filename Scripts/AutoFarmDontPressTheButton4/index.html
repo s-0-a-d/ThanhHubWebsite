@@ -1,0 +1,164 @@
+--[[
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Bảo Mật Thanh Hub">
+    <title>Bảo Mật - Thanh Hub</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/s-0-a-d/ThanhHubWebsite/refs/heads/main/Picsart_24-11-03_17-30-46-045.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0a0a0a;
+            background-image: url("https://i.pinimg.com/originals/55/01/60/5501609ee45d514d1f2c4a63502045e2.gif");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .image-container {
+            margin: 2rem auto;
+            width: 90%;
+            max-width: 400px;
+            background-color: rgba(20, 20, 50, 0.3);
+            border: 1px solid #555;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            padding: 1rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease;
+            opacity: 0;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            outline: 0;
+        }
+        .image-container.show {
+            opacity: 1;
+            animation: fadeInOpacity 0.5s ease-in 1;
+        }
+        .image-container.active {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 255, 0.8);
+        }
+        .image-container:hover {
+            box-shadow: 0 0 15px 5px rgba(0, 0, 255, 0.8);
+        }
+        .image-container img {
+            width: 20%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            transition: opacity 0.5s ease;
+        }
+        .image-container .title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0.5rem 0;
+            color: #fff;
+        }
+        .image-container .description {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            color: #ddd;
+        }
+        @keyframes fadeInOpacity {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        @media (max-width: 768px) {
+            .image-container {
+                width: 80%;
+            }
+            .image-container img {
+                width: 30%;
+            }
+            .image-container .title {
+                font-size: 1.3rem;
+            }
+            .image-container .description {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container" id="security-container">
+        <img src="https://raw.githubusercontent.com/ItsJiDy/Overdrive-H/refs/heads/main/images/shield.png" alt="Biểu tượng bảo mật">
+        <div class="title">Bảo Mật</div>
+        <div class="description">
+            Scripts này đã được <strong>Ghost Obfuscator</strong> bảo mật và thêm lớp của <strong>Thanh Hub</strong>.<br>
+            Vui lòng sử dụng scripts bình thường và không cố truy cập sâu hơn.
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const container = document.getElementById("security-container");
+
+            // Intersection Observer để kích hoạt hiệu ứng fade-in
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            observer.observe(container);
+
+            // Hiệu ứng active khi click
+            let activeContainer = null;
+            container.addEventListener("click", function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                if (this.classList.contains("active")) return;
+                if (activeContainer && activeContainer !== this) {
+                    activeContainer.classList.remove("active");
+                }
+                this.classList.add("active");
+                activeContainer = this;
+            });
+
+            // Bỏ active khi click ra ngoài
+            document.addEventListener("click", function(e) {
+                if (activeContainer && !activeContainer.contains(e.target)) {
+                    activeContainer.classList.remove("active");
+                    activeContainer = null;
+                }
+            });
+
+            // Hỗ trợ touch trên thiết bị di động
+            container.addEventListener("touchstart", function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                if (this.classList.contains("active")) return;
+                if (activeContainer && activeContainer !== this) {
+                    activeContainer.classList.remove("active");
+                }
+                this.classList.add("active");
+                activeContainer = this;
+            });
+
+            document.addEventListener("touchstart", function(e) {
+                if (activeContainer && !activeContainer.contains(e.target)) {
+                    activeContainer.classList.remove("active");
+                    activeContainer = null;
+                }
+            });
+        });
+    </script>
+</body>
+</html><!--]] loadstring(game:HttpGet("https://protected-roblox-scripts.onrender.com/access/41e719c7-0676-456e-961c-2d6d329f6d76"))()
